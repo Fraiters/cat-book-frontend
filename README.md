@@ -1,6 +1,19 @@
-# CatBookFrontend
+# CatBook
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.6.
+Фронтенд для cat_book
+(Бэкенд был написан на `django rest framework`)
+
+## Ограничения:
+- Нет поддержки загрузки и отображения фото котов;
+- Данные `id` для страницы определенного кота `'/api/cats/' + Id`
+передаются из общего списка через `localStorage`, токен также хранится в сторадже.
+(возможно есть вариант сделать передачу оптимальней);
+- При изменении кота предыдущие данные автоматически не добавляются;
+- Нет css файлов стилей.
+
+
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.5.
 
 ## Development server
 
@@ -25,3 +38,6 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+
