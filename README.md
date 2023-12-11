@@ -12,6 +12,11 @@
 - Нет css файлов стилей.
 
 
+## Запуск:
+- `docker build -t js .`
+- `docker run -p 4200:4200 --name cat_book_frontend js` (Важно указать внешний порт)
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.5.
 
