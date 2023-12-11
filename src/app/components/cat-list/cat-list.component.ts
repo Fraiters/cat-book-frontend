@@ -31,7 +31,7 @@ export class CatListComponent implements OnInit{
   }
 
   getCatId(Id: any) {
-    localStorage.setItem('cat_id', Id);
+    localStorage.setItem('cat-id', Id);
     this.router.navigate(['/cat-id'])
   }
 

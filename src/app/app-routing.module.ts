@@ -15,14 +15,14 @@ import {DelCatPageComponent} from "./components/del-cat-page/del-cat-page.compon
 const routes: Routes = [
   { path: '', redirectTo: 'cat-list', pathMatch: "full" },
   { path: 'cat-list', component: CatListComponent },
-  { path: 'cat_id', component: CatIdComponent },
+  { path: 'cat-id', component: CatIdComponent },
   { path: 'add-cat', component: AddCatComponent },
   { path: 'registration', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent },
   { path: 'upd-cat', component: UpdCatComponent },
-  { path: 'del_cat_page', component: DelCatPageComponent },
-  { path: 'del_cat', component: DelCatComponent },
+  { path: 'del-cat-page', component: DelCatPageComponent },
+  { path: 'del-cat', component: DelCatComponent },
 
 ];
 @NgModule({

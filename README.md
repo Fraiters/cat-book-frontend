@@ -13,10 +13,23 @@
 
 
 ## Запуск:
+(связан с бэкендом, который настраивается в `src/environments/` 
+локальный: `apiUrl: 'http://127.0.0.1:8000',`
+сервер: `apiUrl: 'https://catbookbackend-production.up.railway.app',`)
+
 - `docker build -t js .`
 - `docker run -p 4200:4200 --name cat_book_frontend js` (Важно указать внешний порт)
 
-
+## Страницы: 
+- `cat-list` - Список всех котов,
+- `cat-id` - Страница одного кота,
+- `add-cat` - Добавление кота,
+- `upd-cat` - Обновление кота,
+- `del-cat-page` - Страница подтверждения удаления кота,
+- `del-cat` - Удаление кота,
+- `registration` - Регистрация,
+- `login` - Авторизация,
+- `logout` - Выход из аккаунта.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.5.
 
