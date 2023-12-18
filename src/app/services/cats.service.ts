@@ -10,8 +10,17 @@ import {HttpClient} from "@angular/common/http";
 export class CatsService {
 
     baseurl = environment.apiUrl
+    cat_id: any
 
     constructor(private http: HttpClient) {
+    }
+
+    setSharedCatId(Id: any) {
+      this.cat_id = Id
+    }
+
+    getSharedCatId() {
+      return this.cat_id
     }
 
     getCatList(): Observable<any> {

@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {CatsService} from "../../services/cats.service";
 import {UsersService} from "../../services/users.service";
 
@@ -8,19 +8,23 @@ import {UsersService} from "../../services/users.service";
   // styleUrl: './app.component.css'
 })
 export class CatIdComponent {
-  cat_id: string | null
   cat_obj: any
   user: any
   token: any
+  cat_id: any
 
   constructor(private apiCats: CatsService,
               private apiUsers: UsersService,){
   }
 
   ngOnInit(): void {
-    this.cat_id = localStorage.getItem("cat_id")
-    this.token = localStorage.getItem("my_token")
+    // this.cat_id = localStorage.getItem("cat_id")
+    console.log('ddddd')
+    // console.log(this.cat)
+    this.cat_id = this.apiCats.getSharedCatId();
+    this.token = localStorage.getItem("my_token");
     this.getUserByToken(this.token)
+    // this.cat_id = this.getCatId()
     this.getCatById(this.cat_id);
   }
 
@@ -34,9 +38,15 @@ export class CatIdComponent {
         }
     );
   }
+
+  getCatId(){
+    return this.apiCats.getSharedCatId()
+  }
+
   getCatById = (Id: any) => {
     this.apiCats.getCatById(Id).subscribe(
       data => {
+        console.log(data)
         this.cat_obj = data
         // console.log(this.cat_obj.photo)
       },
