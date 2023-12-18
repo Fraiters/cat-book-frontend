@@ -19,6 +19,7 @@ export class HeaderComponent {
   getUserByToken(Token: any) {
     this.apiUsers.getUserByToken(Token).subscribe(
         data => {
+          console.log(data)
           this.user = data;
         },
         error => {

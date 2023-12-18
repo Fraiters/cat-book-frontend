@@ -20,11 +20,11 @@ export class CatIdComponent {
   ngOnInit(): void {
     // this.cat_id = localStorage.getItem("cat_id")
     console.log('ddddd')
-    // console.log(this.cat)
-    this.cat_id = this.apiCats.getSharedCatId();
+    this.cat_id = localStorage.getItem("cat_id");
+    // this.cat_id = this.apiCats.getSharedCatId();
+    console.log(this.cat_id)
     this.token = localStorage.getItem("my_token");
     this.getUserByToken(this.token)
-    // this.cat_id = this.getCatId()
     this.getCatById(this.cat_id);
   }
 
@@ -37,10 +37,6 @@ export class CatIdComponent {
           console.log(error);
         }
     );
-  }
-
-  getCatId(){
-    return this.apiCats.getSharedCatId()
   }
 
   getCatById = (Id: any) => {

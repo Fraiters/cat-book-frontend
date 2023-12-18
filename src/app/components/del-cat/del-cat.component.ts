@@ -15,7 +15,7 @@ export class DelCatComponent {
   }
 
   ngOnInit(): void {
-    this.cat_id = localStorage.getItem('cat_id')
+    this.cat_id = this.catApi.getSharedCatId()
     this.token = localStorage.getItem('my_token')
     console.log(this.cat_id, this.token)
     this.destroyCat(this.cat_id, this.token);

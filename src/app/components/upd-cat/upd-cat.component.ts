@@ -17,7 +17,7 @@ export class UpdCatComponent {
   }
   ngOnInit(): void {
     this.token = localStorage.getItem('my_token')
-    this.cat_id = localStorage.getItem("cat_id")
+    this.cat_id = this.apiCats.getSharedCatId()
     this.getCatById(this.cat_id);
   }
 

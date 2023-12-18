@@ -13,7 +13,7 @@ export class DelCatPageComponent {
   }
 
   ngOnInit(): void {
-    this.cat_id = localStorage.getItem("cat_id")
+    this.cat_id = this.apiCats.getSharedCatId()
     this.getCatById(this.cat_id);
   }
 

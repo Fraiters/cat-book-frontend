@@ -9,7 +9,6 @@ import {Router} from "@angular/router";
 })
 export class CatListComponent implements OnInit{
     cats: any
-    cat_id = 1
   constructor(private apiCats: CatsService,
               private router: Router) {
   }
@@ -31,13 +30,9 @@ export class CatListComponent implements OnInit{
   }
 
   setCatId = (Id: any) => {
-    this.apiCats.setSharedCatId(Id)
+    // this.apiCats.setSharedCatId(Id)
+    localStorage.setItem('cat_id', Id)
     this.router.navigate(['/cat-id'])
   }
-
-  // getCatId(Id: any) {
-  //   localStorage.setItem('cat_id', Id);
-  //   this.router.navigate(['/cat-id'])
-  // }
 
 }
