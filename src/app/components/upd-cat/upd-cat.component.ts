@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {CatsService} from "../../services/cats.service";
 import {Router} from "@angular/router";
 import {FormControl, FormGroup} from "@angular/forms";
@@ -8,16 +8,21 @@ import {FormControl, FormGroup} from "@angular/forms";
   templateUrl: './upd-cat.component.html',
   // styleUrl: './upd-cat.component.css'
 })
-export class UpdCatComponent {
+export class UpdCatComponent implements OnInit{
   cat_obj: any
   cat_id: any
   token: any
   constructor(private apiCats: CatsService,
               private router: Router) {
+    console.log("constructor")
+
   }
   ngOnInit(): void {
+    console.log("ngOnInit")
     this.token = localStorage.getItem('my_token')
     this.cat_id = this.apiCats.getSharedCatId()
+    if (this.cat_id == undefined) this.cat_id = localStorage.getItem("cat_id")
+    this.saveLastId(this.cat_id)
     this.getCatById(this.cat_id);
   }
 
@@ -30,6 +35,11 @@ export class UpdCatComponent {
           console.log(error);
         }
     );
+  }
+
+  saveLastId(Id: any){
+    // Сохранение последнего id для возможной перезагрузки страницы
+    localStorage.setItem("cat_id", Id)
   }
 
   formUpdateCat = new FormGroup({

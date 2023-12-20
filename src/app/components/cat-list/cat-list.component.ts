@@ -30,8 +30,8 @@ export class CatListComponent implements OnInit{
   }
 
   setCatId = (Id: any) => {
-    // this.apiCats.setSharedCatId(Id)
-    localStorage.setItem('cat_id', Id)
+    this.apiCats.setSharedCatId(Id)
+    // localStorage.setItem('cat_id', Id)
     this.router.navigate(['/cat-id'])
   }
 

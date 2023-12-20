@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {CatsService} from "../../services/cats.service";
 import {UsersService} from "../../services/users.service";
 
@@ -7,7 +7,7 @@ import {UsersService} from "../../services/users.service";
   templateUrl: './cat-id.component.html',
   // styleUrl: './app.component.css'
 })
-export class CatIdComponent {
+export class CatIdComponent implements OnInit{
   cat_obj: any
   user: any
   token: any
@@ -15,13 +15,19 @@ export class CatIdComponent {
 
   constructor(private apiCats: CatsService,
               private apiUsers: UsersService,){
+    console.log("constructor")
+
   }
 
   ngOnInit(): void {
-    // this.cat_id = localStorage.getItem("cat_id")
-    console.log('ddddd')
-    this.cat_id = localStorage.getItem("cat_id");
-    // this.cat_id = this.apiCats.getSharedCatId();
+
+    console.log("ngOnInit")
+
+    // this.cat_id = localStorage.getItem("cat_id");
+    this.cat_id = this.apiCats.getSharedCatId();
+    if (this.cat_id == undefined) this.cat_id = localStorage.getItem("cat_id")
+
+    this.saveLastId(this.cat_id)
     console.log(this.cat_id)
     this.token = localStorage.getItem("my_token");
     this.getUserByToken(this.token)
@@ -39,6 +45,10 @@ export class CatIdComponent {
     );
   }
 
+  saveLastId(Id: any){
+    // Сохранение последнего id для возможной перезагрузки страницы
+    localStorage.setItem("cat_id", Id)
+  }
   getCatById = (Id: any) => {
     this.apiCats.getCatById(Id).subscribe(
       data => {

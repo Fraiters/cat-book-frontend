@@ -1,3 +1,5 @@
+<app-header></app-header>
+
 <h1>Изменение кота</h1>
 
 
@@ -30,23 +32,23 @@
         <ul>
             <li>
                 <label>Имя:</label>
-                <input type="text" formControlName="name">
+                <input type="text" formControlName="name" placeholder="{{ cat_obj.name }}">
             </li>
             <li>
                 <label>Возраст:</label>
-                <input type="text" formControlName="age">
+                <input type="text" formControlName="age" placeholder="{{ cat_obj.age }}">
             </li>
             <li>
                 <label>Порода:</label>
-                <input type="text" formControlName="breed">
+                <input type="text" formControlName="breed" placeholder="{{ cat_obj.breed }}">
             </li>
             <li>
                 <label>Вес:</label>
-                <input type="text" formControlName="weight">
+                <input type="text" formControlName="weight" placeholder="{{ cat_obj.weight }}">
             </li>
             <li>
                 <label>Описание:</label>
-                <input type="text" formControlName="description">
+                <input type="text" formControlName="description" placeholder="{{ cat_obj.description }}">
             </li>
         </ul>
     </fieldset>

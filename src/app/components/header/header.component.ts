@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, DoCheck} from '@angular/core';
 import {UsersService} from "../../services/users.service";
 
 @Component({
@@ -6,13 +6,16 @@ import {UsersService} from "../../services/users.service";
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit{
 
   user: any
 
   constructor(private apiUsers: UsersService) {
+    console.log("CONSTRUCTORHEADER")
   }
+
   ngOnInit(): void {
+    console.log("INITHEADER")
     this.getUserByToken(localStorage.getItem('my_token'));
   }
 
