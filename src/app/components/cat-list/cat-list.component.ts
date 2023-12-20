@@ -20,7 +20,6 @@ export class CatListComponent implements OnInit{
   getCatList = () => {
     this.apiCats.getCatList().subscribe(
         data => {
-        console.log(data)
         this.cats = data
       },
         error => {
@@ -31,7 +30,6 @@ export class CatListComponent implements OnInit{
 
   setCatId = (Id: any) => {
     this.apiCats.setSharedCatId(Id)
-    // localStorage.setItem('cat_id', Id)
     this.router.navigate(['/cat-id'])
   }
 

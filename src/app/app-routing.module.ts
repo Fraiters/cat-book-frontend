@@ -10,8 +10,6 @@ import {DelCatComponent} from "./components/del-cat/del-cat.component";
 import {UpdCatComponent} from "./components/upd-cat/upd-cat.component";
 import {DelCatPageComponent} from "./components/del-cat-page/del-cat-page.component";
 
-// const routes: Routes = [];
-
 const routes: Routes = [
   { path: '', redirectTo: 'cat-list', pathMatch: "full" },
   { path: 'cat-list', component: CatListComponent },

@@ -15,20 +15,13 @@ export class CatIdComponent implements OnInit{
 
   constructor(private apiCats: CatsService,
               private apiUsers: UsersService,){
-    console.log("constructor")
-
   }
 
   ngOnInit(): void {
-
-    console.log("ngOnInit")
-
-    // this.cat_id = localStorage.getItem("cat_id");
     this.cat_id = this.apiCats.getSharedCatId();
     if (this.cat_id == undefined) this.cat_id = localStorage.getItem("cat_id")
 
     this.saveLastId(this.cat_id)
-    console.log(this.cat_id)
     this.token = localStorage.getItem("my_token");
     this.getUserByToken(this.token)
     this.getCatById(this.cat_id);
@@ -52,7 +45,6 @@ export class CatIdComponent implements OnInit{
   getCatById = (Id: any) => {
     this.apiCats.getCatById(Id).subscribe(
       data => {
-        console.log(data)
         this.cat_obj = data
         // console.log(this.cat_obj.photo)
       },

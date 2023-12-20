@@ -13,7 +13,6 @@ export class LogoutComponent implements OnInit{
   }
   ngOnInit(): void {
     this.token = localStorage.getItem('my_token')
-    console.log(this.token)
     this.getUserByToken(this.token)
     this.logout(this.token)
   }

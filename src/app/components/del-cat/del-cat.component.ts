@@ -19,7 +19,6 @@ export class DelCatComponent implements OnInit{
     if (this.cat_id == undefined) this.cat_id = localStorage.getItem("cat_id")
     this.saveLastId(this.cat_id)
     this.token = localStorage.getItem('my_token')
-    console.log(this.cat_id, this.token)
     this.destroyCat(this.cat_id, this.token);
   }
 

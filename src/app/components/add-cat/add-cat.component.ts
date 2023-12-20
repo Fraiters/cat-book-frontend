@@ -49,7 +49,6 @@ export class AddCatComponent {
     this.apiCats.createCat(Name, Age, Breed, Weight, // Photo,
         Description, this.token).subscribe(
       data => {
-        console.log(data)
         this.cats = data
         this.router.navigate([""])
       },

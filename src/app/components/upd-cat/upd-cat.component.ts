@@ -14,11 +14,8 @@ export class UpdCatComponent implements OnInit{
   token: any
   constructor(private apiCats: CatsService,
               private router: Router) {
-    console.log("constructor")
-
   }
   ngOnInit(): void {
-    console.log("ngOnInit")
     this.token = localStorage.getItem('my_token')
     this.cat_id = this.apiCats.getSharedCatId()
     if (this.cat_id == undefined) this.cat_id = localStorage.getItem("cat_id")

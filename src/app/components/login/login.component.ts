@@ -34,7 +34,6 @@ export class LoginComponent implements OnInit {
   getToken(Username: string | null | undefined, Password: string | null | undefined) {
     this.apiUsers.getToken(Username, Password).subscribe(
         data => {
-          console.log(data)
           localStorage.setItem('my_token', data.auth_token);
           this.router.navigate([""])
         },

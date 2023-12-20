@@ -11,18 +11,15 @@ export class HeaderComponent implements OnInit{
   user: any
 
   constructor(private apiUsers: UsersService) {
-    console.log("CONSTRUCTORHEADER")
   }
 
   ngOnInit(): void {
-    console.log("INITHEADER")
     this.getUserByToken(localStorage.getItem('my_token'));
   }
 
   getUserByToken(Token: any) {
     this.apiUsers.getUserByToken(Token).subscribe(
         data => {
-          console.log(data)
           this.user = data;
         },
         error => {
